@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var techpathshalaStudents={
+            nameOfStudents:["Sandesh","Akhilesh","Atharva","Deepak","Ajit","Arun"],
+            languages:["Html","Css","JavaScript","ReactJS"],
+            totalNoOfStudents:25,
+            teacher:"Munaf Hajir",
+            lectureDays:["Monday","Wednesday","Friday"],
+            lectureDuration:"2hrs",
+        }
+
+
+        Object.freeze(techpathshalaStudents);
+        console.log(techpathshalaStudents.nameOfStudents);
+        console.log(techpathshalaStudents.languages);
+        techpathshalaStudents.totalNoOfStudents=17;
+        console.log(techpathshalaStudents.totalNoOfStudents);
+        console.log(techpathshalaStudents.teacher);
+        delete techpathshalaStudents.lectureDays;
+        console.log(techpathshalaStudents.lectureDays);
+        console.log(techpathshalaStudents.lectureDuration);
+        console.log(techpathshalaStudents);
+    </script>
+</body>
+</html>
