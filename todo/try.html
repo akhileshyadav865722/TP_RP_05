@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{background-color: rgb(153, 160, 160);}
+  </style>
+</head>
+<body>
+  <div style="border: 5px solid rgb(12, 11, 11);height: 100px;">
+    <input id="task" style="font-size: 2em;border-radius: 10px;"/>
+    <button onclick="addTask()" style="font-size: 2em; padding: 10px 20px;border-radius: 10px;background-color: rgb(72, 64, 64);color: white;
+                                       margin: 0px 20px;">Add Task</button>
+  </div>
+  <div>
+    <ol id="taskList"></ol>
+  </div>
+  <script>
+    
+    var count=0;
+
+    function addTask() {
+      var task = document.getElementById("task").value;
+      var taskList = document.getElementById("taskList");
+
+      taskList.innerHTML += `<li id="list-${count}" style="font-size: 2em;background: linear-gradient(45deg,black,gray);color:white;
+                             padding:10px 20px;margin:10px;border-radius:50px;"> ${task} </li>
+                             <button onclick="taskComplete('list-${count}')" style="font-size: 2em; padding: 10px 20px;
+                             margin:0px 10px;border-radius: 10px;background-color: rgb(72, 64, 64);color: white;"> Complete </button></div>`;
+      count++;
+    }
+
+
+    function taskComplete(id) {
+      var task=document.getElementById(id);
+      task.style.textDecoration = "line-through";
+    }
+
+    
+  </script>
+</body>
+</html>
